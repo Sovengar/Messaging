@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SavedRequest.Cache">
+    <option name="cache">
+      <map>
+        <entry key="Requests" value="[{&quot;id&quot;:&quot;17494155258088ff9&quot;, &quot;parentId&quot;:&quot;0&quot;, &quot;name&quot;:&quot;@/orders&quot;, &quot;desc&quot;:&quot;&quot;, &quot;sort&quot;:&quot;0&quot;, &quot;child&quot;:[], &quot;icon&quot;:&quot;/icons/tool/request.svg&quot;, &quot;type&quot;:&quot;REQUEST&quot;, &quot;method&quot;:&quot;POST&quot;, &quot;url&quot;:&quot;@/orders&quot;, &quot;savedRequestEnvInfo&quot;:{&quot;env&quot;:&quot;Global&quot;, &quot;module&quot;:&quot;messaging&quot;, &quot;host&quot;:&quot;http://localhost&quot;, &quot;port&quot;:&quot;8080&quot;, &quot;contextPath&quot;:&quot;&quot;}, &quot;savedRequestParamInfo&quot;:{&quot;params&quot;:&quot;[{\&quot;datum1\&quot;:\&quot;product\&quot;,\&quot;datum2\&quot;:\&quot;String\&quot;,\&quot;datum0\&quot;:true,\&quot;datum3\&quot;:\&quot;\&quot;},{\&quot;datum1\&quot;:\&quot;orderId\&quot;,\&quot;datum2\&quot;:\&quot;NULL\&quot;,\&quot;datum0\&quot;:true,\&quot;datum3\&quot;:\&quot;\&quot;}]&quot;, &quot;authorization&quot;:&quot;{\&quot;token\&quot;:\&quot;\&quot;,\&quot;password\&quot;:\&quot;\&quot;,\&quot;selectType\&quot;:\&quot;No Auth\&quot;,\&quot;username\&quot;:\&quot;\&quot;}&quot;, &quot;headers&quot;:&quot;[]&quot;, &quot;body&quot;:[{&quot;index&quot;:&quot;0&quot;, &quot;select&quot;:&quot;false&quot;, &quot;params&quot;:&quot;&quot;}, {&quot;index&quot;:&quot;1&quot;, &quot;select&quot;:&quot;false&quot;, &quot;params&quot;:&quot;[]&quot;}, {&quot;index&quot;:&quot;2&quot;, &quot;select&quot;:&quot;false&quot;, &quot;params&quot;:&quot;[]&quot;}, {&quot;index&quot;:&quot;3&quot;, &quot;select&quot;:&quot;true&quot;, &quot;params&quot;:&quot;{ \&quot;product\&quot;: \&quot;123\&quot;, \&quot;orderId\&quot;: \&quot;9bb0d8e5-cabe-4a43-b616-ea79831c196d\&quot; }  &quot;}]}}]" />
+      </map>
+    </option>
+  </component>
+</project>
