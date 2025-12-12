@@ -1,6 +1,5 @@
-package jon.messaging.test;
+package jon.messaging;
 
-import jon.messaging.shared.messaging.events.OrderPlaced;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -13,7 +12,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
-import org.springframework.web.WebApplicationInitializer;
 
 import java.util.UUID;
 
@@ -31,8 +29,8 @@ class TestEvents {
     }
 
     void publishEvents() throws InterruptedException {
-        publisher.publishEvent(new UserRegisteredAsync(UUID.randomUUID()));
-        publisher.publishEvent(new UserRegisteredSync(UUID.randomUUID()));
+        publisher.publishEvent(new UserRegisteredAsync(UUID.randomUUID())); //Async
+        publisher.publishEvent(new UserRegisteredSync(UUID.randomUUID())); //Sync
     }
 
     //This happens in the same transaction. An error here rolls back the producer, care

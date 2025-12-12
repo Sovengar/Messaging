@@ -1,6 +1,6 @@
-package jon.messaging.shared.messaging.events;
+package jon.messaging.shared.domain.events;
 
-import jon.messaging.shared.messaging.RabbitConfig;
+import jon.messaging.shared.infra.rabbitmq.RabbitConfig;
 import org.springframework.modulith.events.Externalized;
 
 //IntegrationEvent

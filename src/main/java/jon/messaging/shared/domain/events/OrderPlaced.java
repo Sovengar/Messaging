@@ -1,4 +1,4 @@
-package jon.messaging.shared.messaging.events;
+package jon.messaging.shared.domain.events;
 
 import java.util.UUID;
 import java.io.Serializable;

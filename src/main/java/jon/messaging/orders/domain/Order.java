@@ -4,7 +4,7 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jon.messaging.shared.messaging.events.OrderPlaced;
+import jon.messaging.shared.domain.events.OrderPlaced;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

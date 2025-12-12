@@ -3,53 +3,24 @@ package jon.messaging.orders.application.commands;
 import jon.messaging.old.commands.PlaceOrderCommand2;
 import jon.messaging.orders.domain.Order;
 import jon.messaging.orders.domain.OrderRepo;
-import jon.messaging.old.OldCommandBus;
-import jon.messaging.shared.infra.bus.CommandBus;
-import jon.messaging.shared.infra.bus.CommandHandler;
-import jon.messaging.shared.infra.bus.RequestBus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
-
-
-@RestController
-@RequestMapping("/orders")
-@RequiredArgsConstructor
-class PlaceOrderHttpController {
-    private final OldCommandBus oldCommandBus;
-    private final CommandBus commandBus;
-    private final RequestBus requestBus;
-
-    @PostMapping
-    public ResponseEntity<String> createOrder(@RequestBody PlaceOrderRequest request) {
-        commandBus.dispatch(new PlaceOrderCommand(request.orderId(), request.productId()));
-        oldCommandBus.dispatch(new PlaceOrderCommand2(request.orderId(), request.productId()));
-        requestBus.dispatch(new PlaceOrderCommand(request.orderId(), request.productId()));
-        return ResponseEntity.ok(request.orderId().toString());
-    }
-
-    record PlaceOrderRequest(String productId, UUID orderId) { }
-}
 
 @Component
 @RequiredArgsConstructor
 @Slf4j
-class PlaceOrder implements CommandHandler<PlaceOrderCommand, UUID> {
+public class PlaceOrder2 {
     private final OrderRepo repo;
     private final ApplicationEventPublisher events;
     //private final RabbitPublisher rabbitPublisher;
 
     @Transactional
-    public UUID handle(PlaceOrderCommand command) {
+    public UUID handle(PlaceOrderCommand2 command) {
         log.info("BEGIN PlaceOrder");
 
         var orderId = command.orderId() != null ? command.orderId() : UUID.randomUUID();
@@ -75,5 +46,5 @@ class PlaceOrder implements CommandHandler<PlaceOrderCommand, UUID> {
         events.publishEvent(event);
         // rabbitPublisher.publish(event);
     }
-}
 
+}

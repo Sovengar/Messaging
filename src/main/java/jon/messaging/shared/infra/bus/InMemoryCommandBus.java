@@ -1,4 +1,4 @@
-package jon.messaging.two;
+package jon.messaging.shared.infra.bus;
 
 import org.springframework.stereotype.Component;
 

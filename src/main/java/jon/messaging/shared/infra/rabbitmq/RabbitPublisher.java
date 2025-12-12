@@ -1,6 +1,6 @@
-package jon.messaging.shared.messaging;
+package jon.messaging.shared.infra.rabbitmq;
 
-import jon.messaging.shared.messaging.events.OrderPlaced;
+import jon.messaging.shared.domain.events.OrderPlaced;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;

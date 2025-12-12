@@ -1,4 +1,4 @@
-package jon.messaging.shared.messaging;
+package jon.messaging.shared.infra.rabbitmq;
 
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Exchange;
