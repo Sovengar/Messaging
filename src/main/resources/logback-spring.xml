@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Configuración de salida a consola (mantiene los logs en consola) -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración para guardar logs en fichero -->
+    <appender name="RawQueueLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/raw_queue.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+
+        <!-- Política de rotación de archivos -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Rotación diaria de archivos -->
+            <fileNamePattern>logs/archived/raw_queue.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- Mantener archivos de logs por 3 días -->
+            <maxHistory>3</maxHistory>
+            <!-- Tamaño máximo total de todos los archivos: 1GB -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="PostgresQueueLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/postgres_queue.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/postgres_queue.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="BusLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/bus.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/bus.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="EventsLogFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/events.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/events.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <!-- Loggers para cada paquete, con su appender y sin heredar del root -->
+    <logger name="jon.messaging.raw_queue" level="INFO" additivity="false">
+        <appender-ref ref="RawQueueLogFile" />
+    </logger>
+    <logger name="jon.messaging.postgres_queue" level="INFO" additivity="false">
+        <appender-ref ref="PostgresQueueLogFile" />
+    </logger>
+    <logger name="jon.messaging.bus" level="INFO" additivity="false">
+        <appender-ref ref="BusLogFile" />
+    </logger>
+    <logger name="jon.messaging.events" level="INFO" additivity="false">
+        <appender-ref ref="EventsLogFile" />
+    </logger>
+
+    <!-- Silencia otros logs del paquete jon.messaging que no coincidan con los anteriores -->
+    <logger name="jon.messaging" level="OFF" />
+
+    <!-- Configuración raíz: aplica a todos los demás loggers (Spring, Hibernate, etc.) -->
+    <!-- Solo mostrará logs de INFO o superior en la consola -->
+    <root level="INFO">
+        <appender-ref ref="Console" />
+    </root>
+</configuration>
