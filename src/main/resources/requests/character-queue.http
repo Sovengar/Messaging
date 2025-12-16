@@ -1,0 +1,20 @@
+### Stream the last 20 messages from the character queue
+GET http://localhost:8080/character-queue/stream
+Accept: text/event-stream
+
+### Get the number of active SSE connections
+GET http://localhost:8080/character-queue/stream/active-connections
+Accept: application/json
+
+### Enqueue a new character message
+POST http://localhost:8080/character-queue
+Content-Type: application/json
+
+{
+  "messageId": "{{$random.uuid}}",
+  "character": {
+    "name": "Aragorn",
+    "race": "Human",
+    "level": 15
+  }
+}

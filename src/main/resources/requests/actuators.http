@@ -1,1 +1,2 @@
+### GET request to example server
 GET /actuator/spring.modulith/events

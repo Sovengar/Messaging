@@ -1,0 +1,8 @@
+### Place a new order via the event-based system
+POST http://localhost:8080/events/orders
+Content-Type: application/json
+
+{
+  "productId": "product-123",
+  "orderId": "{{$random.uuid}}"
+}

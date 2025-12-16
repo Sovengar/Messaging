@@ -1,0 +1,11 @@
+### Get all messages from the Dead Letter Queue
+GET http://localhost:8080/dead-letter-queue
+Accept: application/json
+
+### Discard a message from the Dead Letter Queue
+DELETE http://localhost:8080/dead-letter-queue/discard/{{messageId}}
+Accept: application/json
+
+### Mark a message in the DLQ as processed
+PUT http://localhost:8080/dead-letter-queue/processed/{{messageId}}
+Accept: application/json

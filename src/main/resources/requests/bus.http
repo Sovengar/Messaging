@@ -1,0 +1,8 @@
+### Place a new order via the command bus
+POST http://localhost:8080/bus/orders
+Content-Type: application/json
+
+{
+  "productId": "product-456",
+  "orderId": "{{$random.uuid}}"
+}
