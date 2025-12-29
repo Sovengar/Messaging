@@ -1,6 +1,6 @@
 package jon.messaging.raw_queue.shared;
 
-import jon.messaging.raw_queue.characters.character_queue.CharacterQueue;
+import jon.messaging.raw_queue.queues.character_queue.CharacterQueue;
 
 //Used for applying Double Dispatch in the model
 public interface Emitter {

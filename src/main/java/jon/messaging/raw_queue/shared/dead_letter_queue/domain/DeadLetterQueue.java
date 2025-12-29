@@ -1,4 +1,4 @@
-package jon.messaging.raw_queue.shared.dead_letter_queue;
+package jon.messaging.raw_queue.shared.dead_letter_queue.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -29,11 +29,32 @@ public class DeadLetterQueue {
     private LocalDateTime arrivedAt;
 
     private String fromQueue;
+    @Enumerated(EnumType.STRING)
+    private OriginType origin;
+    private String error;
+
+    public enum OriginType {
+        FRONTEND,
+        EXTERNAL_CLIENT,
+        APPLICATION,
+        CRON
+    }
+
+    public void updateError(String error) {
+        this.error = error;
+    }
 
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
     public static class Factory {
-        public static DeadLetterQueue create(UUID messageId, String data, LocalDateTime arrivedAt, String fromQueue) {
-            return new DeadLetterQueue(messageId, data, arrivedAt, fromQueue);
+        public static DeadLetterQueue create(
+                UUID messageId,
+                String data,
+                LocalDateTime arrivedAt,
+                String fromQueue,
+                OriginType origin,
+                String error
+        ) {
+            return new DeadLetterQueue(messageId, data, arrivedAt, fromQueue, origin, error);
         }
     }
 }

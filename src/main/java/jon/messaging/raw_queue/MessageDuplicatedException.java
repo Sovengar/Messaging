@@ -1,4 +1,4 @@
-package jon.messaging.raw_queue.shared;
+package jon.messaging.raw_queue;
 
 import lombok.Getter;
 

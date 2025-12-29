@@ -1,7 +1,7 @@
-package jon.messaging.raw_queue.characters.character_queue.application;
+package jon.messaging.raw_queue.queues.character_queue.application;
 
-import jon.messaging.raw_queue.characters.character_queue.infra.CharacterQueueProducer;
-import jon.messaging.raw_queue.characters.Character;
+import jon.messaging.raw_queue.queues.character_queue.infra.CharacterQueueProducer;
+import jon.messaging.raw_queue.Character;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

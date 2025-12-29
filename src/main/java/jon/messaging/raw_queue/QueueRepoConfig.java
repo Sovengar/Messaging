@@ -1,8 +1,8 @@
-package jon.messaging.raw_queue.queues;
+package jon.messaging.raw_queue;
 
 import jakarta.persistence.EntityManager;
-import jon.messaging.raw_queue.characters.character_queue.CharacterQueue;
-import jon.messaging.raw_queue.characters.character_queue.infra.CharacterQueueSpringJpaRepo;
+import jon.messaging.raw_queue.queues.character_queue.CharacterQueue;
+import jon.messaging.raw_queue.queues.character_queue.infra.CharacterQueueSpringJpaRepo;
 import jon.messaging.raw_queue.queues.product_queue.ProductQueue;
 import jon.messaging.raw_queue.queues.product_queue.ProductQueueSpringJpaRepo;
 import jon.messaging.raw_queue.shared.abstract_queue.QueuePostgreRepo;

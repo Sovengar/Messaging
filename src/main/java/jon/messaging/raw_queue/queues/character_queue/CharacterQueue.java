@@ -1,4 +1,4 @@
-package jon.messaging.raw_queue.characters.character_queue;
+package jon.messaging.raw_queue.queues.character_queue;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

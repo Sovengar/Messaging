@@ -1,7 +1,7 @@
-package jon.messaging.raw_queue.characters.character_queue.application;
+package jon.messaging.raw_queue.queues.character_queue.application;
 
-import jon.messaging.raw_queue.characters.character_queue.CharacterQueue;
-import jon.messaging.raw_queue.characters.character_queue.infra.CharacterQueueSpringJpaRepo;
+import jon.messaging.raw_queue.queues.character_queue.CharacterQueue;
+import jon.messaging.raw_queue.queues.character_queue.infra.CharacterQueueSpringJpaRepo;
 import jon.messaging.raw_queue.shared.HttpSseEmitter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

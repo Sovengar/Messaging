@@ -1,4 +1,4 @@
-package jon.messaging.raw_queue.characters;
+package jon.messaging.raw_queue;
 
 public record Character(String lotrName, String gotName) {
 }

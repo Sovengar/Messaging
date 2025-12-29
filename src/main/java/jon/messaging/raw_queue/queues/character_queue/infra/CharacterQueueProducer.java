@@ -1,11 +1,11 @@
-package jon.messaging.raw_queue.characters.character_queue.infra;
+package jon.messaging.raw_queue.queues.character_queue.infra;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
-import jon.messaging.raw_queue.characters.character_queue.CharacterQueue;
-import jon.messaging.raw_queue.characters.Character;
+import jon.messaging.raw_queue.queues.character_queue.CharacterQueue;
+import jon.messaging.raw_queue.Character;
 import jon.messaging.raw_queue.shared.Emitter;
-import jon.messaging.raw_queue.shared.MessageDuplicatedException;
+import jon.messaging.raw_queue.MessageDuplicatedException;
 import jon.messaging.raw_queue.shared.abstract_queue.QueueRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;

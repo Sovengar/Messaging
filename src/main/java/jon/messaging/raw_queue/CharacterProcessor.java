@@ -1,4 +1,4 @@
-package jon.messaging.raw_queue.characters;
+package jon.messaging.raw_queue;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
